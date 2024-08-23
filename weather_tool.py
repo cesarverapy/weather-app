@@ -23,3 +23,17 @@ def fetch_weather_Data(city_name, country_code, api_key):
         print(f"Other error occurred: {err}")
     
     return None
+
+def display_Data(weather_info, format_type):
+    if format_type == 'json':
+        print(json.dumps(weather_info, indent=2))
+
+    elif format_type == 'csv':
+        temperature = weather_info['main']['temp']
+        description = weather_info['weather'][0]['description']
+        print(f"temperature,{temperature} /ncondition, {description}")
+    
+    else:
+        temperature = weather_info['main']['temp']
+        description = weather_info['weather'][0]['description']
+        print(f"the current temperature is {temperature} ºC with {description}")

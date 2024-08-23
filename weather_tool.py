@@ -46,7 +46,7 @@ def main():
         print("error: please ensure the location is in the format 'city-country'. example: Asuncion-PY ")
         sys.exit(1)
 
-    api_key = "02b2a34250d8e42223a866ed5f02b267"
+    api_key = "d099d30e2a258e30c80fff3ba41f044e"
     weather_info = fetch_weather_Data(city, country, api_key)
 
     if weather_info:

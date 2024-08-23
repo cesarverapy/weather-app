@@ -37,3 +37,21 @@ def display_Data(weather_info, format_type):
         temperature = weather_info['main']['temp']
         description = weather_info['weather'][0]['description']
         print(f"the current temperature is {temperature} ºC with {description}")
+
+def main():
+    args = parse_Arguments()
+    try:
+        city, country = args.place.split('-')
+    except ValueError:
+        print("error: please ensure the location is in the format 'city-country'. example: Asuncion-PY ")
+        sys.exit(1)
+
+    api_key = "02b2a34250d8e42223a866ed5f02b267"
+    weather_info = fetch_weather_Data(city, country, api_key)
+
+    if weather_info:
+        display_Data(weather_info, args.output)
+
+
+if __name__ == "__main__":
+    main()

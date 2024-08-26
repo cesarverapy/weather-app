@@ -10,7 +10,7 @@ def parse_arguments():
     return parser.parse_args()
 
 def fetch_weather_data(city_name, country_code, api_key):
-    endpoint = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}, {country_code}, {api_key} & units = metric"
+    endpoint = f"http://api.openweathermap.org/data/2.5/weather?q={city_name},{country_code}&appid={api_key}&units=metric"
     try:
         result = requests.get(endpoint)
         result.raise_for_status()

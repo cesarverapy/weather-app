@@ -2,14 +2,14 @@ import sys
 import requests
 import json
 
-def parse_Arguments():
+def parse_arguments():
     import argparse
     parser = argparse.ArgumentParser(description="retrieve weather data for a specified city or country, or both")
     parser.add_argument("place", help="specify the location as 'city-country' (example: Asuncion-PY)")
     parser.add_argument("--output", choices=['json', 'csv', 'plain'], default='plain', help="choose the format for the output")
     return parser.parse_args()
 
-def fetch_weather_Data(city_name, country_code, api_key):
+def fetch_weather_data(city_name, country_code, api_key):
     endpoint = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}, {country_code}, {api_key} & units = metric"
     try:
         result = requests.get(endpoint)
@@ -24,7 +24,7 @@ def fetch_weather_Data(city_name, country_code, api_key):
     
     return None
 
-def display_Data(weather_info, format_type):
+def display_data(weather_info, format_type):
     if format_type == 'json':
         print(json.dumps(weather_info, indent=2))
 
@@ -39,7 +39,7 @@ def display_Data(weather_info, format_type):
         print(f"the current temperature is {temperature} ºC with {description}")
 
 def main():
-    args = parse_Arguments()
+    args = parse_arguments()
     try:
         city, country = args.place.split('-')
     except ValueError:
@@ -47,10 +47,10 @@ def main():
         sys.exit(1)
 
     api_key = "d099d30e2a258e30c80fff3ba41f044e"
-    weather_info = fetch_weather_Data(city, country, api_key)
+    weather_info = fetch_weather_data(city, country, api_key)
 
     if weather_info:
-        display_Data(weather_info, args.output)
+        display_data(weather_info, args.output)
 
 
 if __name__ == "__main__":

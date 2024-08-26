@@ -31,7 +31,7 @@ def display_data(weather_info, format_type):
     elif format_type == 'csv':
         temperature = weather_info['main']['temp']
         description = weather_info['weather'][0]['description']
-        print(f"temperature,{temperature} /ncondition, {description}")
+        print(f"temperature,{temperature} \ncondition, {description}")
     
     else:
         temperature = weather_info['main']['temp']

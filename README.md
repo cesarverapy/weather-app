@@ -1,1 +1,1 @@
-# Git-Weathered CLI Application
+CLI Application

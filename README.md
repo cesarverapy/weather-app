@@ -1,1 +1,1 @@
-## WeatherApp
+CLI Application

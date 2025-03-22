@@ -52,4 +52,8 @@ python -m unittest discover tests
 
 ---
 
+## Future Improvements
+
+- Convert CLI to GUI.
+
 Enjoy using the WeatherApp! ☀️🌦️

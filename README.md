@@ -54,7 +54,7 @@ python -m unittest discover tests
 
 ## Future Improvements
 
-- Convert CLI to GUI.
+- Add Frontend
 
 ---
 

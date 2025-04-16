@@ -59,23 +59,6 @@ src/
     └── weather_service.py # API interaction
 ```
 
-## Testing
-
-To run the unit tests:
-```bash
-python -m unittest discover tests
-```
-
-## Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
 ## Future Improvements
 
 - Add Frontend

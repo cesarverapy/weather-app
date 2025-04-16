@@ -1,33 +1,37 @@
 # WeatherApp
 
-This CLI application fetches and displays weather data for a given location (city and country). It uses the OpenWeatherMap API to retrieve the data and can display the output in plain text, JSON, or CSV formats.
+A command-line weather application that fetches and displays weather data for a given location. Built with clean architecture and SOLID principles.
+
+## Features
+
+- Fetch current weather data for any city and country
+- Multiple output formats (JSON, CSV, plain text)
+- Clean, modular code structure
+- Type hints and proper error handling
+- Easy to extend and maintain
 
 ## Requirements
 
 - Python 3.6+
 - `requests` library
-- `python-dotenv` library for environment variable handling
+- `python-dotenv` library
 
 ## Installation
 
 1. Clone the repository:
-
    ```bash
    git clone https://github.com/your-username/WeatherApp.git
    cd WeatherApp
    ```
 
 2. Install the dependencies:
-
    ```bash
    pip install -r requirements.txt
    ```
 
 3. Set up the OpenWeatherMap API key:
-
    Create a `.env` file with your API key:
-
-   ```bash
+   ```
    OPENWEATHER_API_KEY=your_api_key_here
    ```
 
@@ -36,21 +40,24 @@ This CLI application fetches and displays weather data for a given location (cit
 Run the script with the following command:
 
 ```bash
-python weather_tool.py Asuncion-PY --output json
+python -m src.weather_app.main Asuncion-PY --output json
 ```
 
-- Replace `Asuncion-PY` with your desired location.
-- Use the `--output` flag to choose the format (`json`, `csv`, or `plain`).
+- Replace `Asuncion-PY` with your desired location
+- Use the `--output` flag to choose the format (`json`, `csv`, or `plain`)
 
-## Testing
+## Project Structure
 
-To run the unit tests, use:
-
-```bash
-python -m unittest discover tests
 ```
-
----
+src/
+└── weather_app/
+    ├── __init__.py
+    ├── config.py         # Configuration management
+    ├── display.py        # Output formatting
+    ├── exceptions.py     # Custom exceptions
+    ├── main.py          # Entry point
+    └── weather_service.py # API interaction
+```
 
 ## Future Improvements
 
